@@ -42,7 +42,9 @@ describe Account do
   end
 
   describe '#where' do
-    @account = Account.where(:user_id => 5)
+    before do
+      @account = Account.where(:user_id => 5)
+    end
     it 'is not nil' do
       expect(@account).to_not be_nil
     end
@@ -53,17 +55,21 @@ describe Account do
   end
 
   describe '#create' do
-    @account = Account.create({
-      user_id: 1,
-      bank_id: 1,
-      balance: 50.0,
-    })
+    before do
+      @account = Account.create({
+        user_id: 1,
+        bank_id: 1,
+        balance: 50.0,
+        account_type_id: 1
+      })
+    end
 
     it 'was successful' do
       expect(@account.id).to_not be_nil
       expect(@account.bank_id).to eql 1
       expect(@account.user_id).to eql 1
       expect(@account.balance).to eql 50.0
+      expect(@account.account_type_id).to eql 1
     end
   end
 
