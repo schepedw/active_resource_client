@@ -14,7 +14,6 @@ describe Account do
     end
   end
 
-=begin
   describe '#all' do
     before do
       @accounts = Account.all
@@ -23,8 +22,8 @@ describe Account do
       expect(@accounts).to_not be_nil
     end
 
-    it 'is not empty' do
-      expect(@accounts).to_not be_empty
+    it 'is not blank' do
+      expect(@accounts).to_not be_blank
     end
   end
 
@@ -36,8 +35,8 @@ describe Account do
       expect(@account).to_not be_nil
     end
 
-    it 'is not empty' do
-      expect(@account).to_not be_empty
+    it 'is not blank' do
+      expect(@account).to_not be_blank
     end
   end
 
@@ -49,8 +48,8 @@ describe Account do
       expect(@account).to_not be_nil
     end
 
-    it 'is not empty' do
-      expect(@account).to_not be_empty
+    it 'is not blank' do
+      expect(@account).to_not be_blank
     end
   end
 
@@ -76,5 +75,4 @@ describe Account do
   describe '#delete' do
 
   end
-=end
 end
